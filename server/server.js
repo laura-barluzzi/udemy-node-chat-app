@@ -27,6 +27,18 @@ io.on('connection', (socket) => {
             createdAt: new Date().getDate()
         });
     });
+    
+    socket.emit('welcomeMessage', {
+        from: 'admin',
+        text: 'Welcome to our chat room!',
+        createdAt: new Date().getDate()
+    });
+
+    socket.broadcast.emit('introduceMessage', {
+        from: 'admin',
+        text: 'Welcome the new user to our chat room!',
+        createdAt: new Date().getDate()
+    });
 
 });
 
