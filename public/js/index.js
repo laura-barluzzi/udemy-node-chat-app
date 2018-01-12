@@ -11,7 +11,3 @@ socket.on('newMessage', function (message) {
     console.log('newMessage:', message);
 });
 
-socket.emit('createMessage', {
-    from: 'laura',
-    text: 'hello world!'
-});
